@@ -3,7 +3,6 @@ import useCountdown from '../hooks/useCountdown';
 import { couple } from '../data/config';
 import Reveal from './Reveal';
 import SectionDivider from './SectionDivider';
-import Petals from './Petals';
 
 function FlipUnit({ value, label }) {
   const padded = String(value).padStart(2, '0');
@@ -40,7 +39,6 @@ export default function Countdown() {
       id="countdown"
       className="relative py-24 sm:py-32 px-6 bg-gradient-to-b from-cream via-sand to-cream overflow-hidden"
     >
-      <Petals density={8} />
       <Reveal direction="fade" className="relative max-w-3xl mx-auto text-center">
         <p className="font-body text-xs tracking-widest2 uppercase text-gold-dark">
           The Final Countdown

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Petals from './Petals';
 import SectionDivider from './SectionDivider';
 import { couple } from '../data/config';
 
@@ -13,7 +12,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-sand via-cream to-cream px-6 text-center"
     >
-      <Petals density={16} />
       <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-sage/20 blur-3xl" />
       <div className="absolute -bottom-24 -right-16 w-80 h-80 rounded-full bg-gold/10 blur-3xl" />
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import EntryGate from './components/EntryGate';
 import MusicPlayer from './components/MusicPlayer';
+import Petals from './components/Petals';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
 import Story from './components/Story';
@@ -29,6 +30,7 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative"
         >
+          <Petals density={22} fixed />
           <Hero />
           <Countdown />
           <Story />

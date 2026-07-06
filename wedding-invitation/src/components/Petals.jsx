@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 // A soft field of floating petals + leaves used as ambient decoration.
 // `density` lets a section request fewer/more petals; `variant` swaps
 // the color for light/dark backgrounds.
-export default function Petals({ density = 14, variant = 'light' }) {
+export default function Petals({ density = 14, variant = 'light', fixed = false }) {
   const petals = useMemo(
     () =>
       Array.from({ length: density }).map((_, i) => ({
@@ -24,13 +24,18 @@ export default function Petals({ density = 14, variant = 'light' }) {
   const soft = variant === 'dark' ? '#AEBB9F' : '#8A9A7B';
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div
+      className={`pointer-events-none overflow-hidden ${
+        fixed ? 'fixed inset-0 z-40 h-[100dvh] w-screen' : 'absolute inset-0'
+      }`}
+      aria-hidden="true"
+    >
       {petals.map((p) => (
         <motion.span
           key={p.id}
           initial={{ y: '-10%', x: 0, opacity: 0, rotate: p.rotate }}
           animate={{
-            y: '110%',
+            y: '110vh',
             x: [0, p.drift, 0],
             opacity: [0, 0.8, 0.8, 0],
             rotate: p.rotate + 180,
