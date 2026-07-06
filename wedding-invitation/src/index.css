@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply font-body text-ink antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  @apply bg-gold-light/60 text-emerald-dark;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1e8d6;
+}
+::-webkit-scrollbar-thumb {
+  background: #aebb9f;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8a9a7b;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(46, 58, 36, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.text-outline-gold {
+  -webkit-text-stroke: 1px #c9a455;
+}
+
+.divider-leaf {
+  position: relative;
+}
+
+.divider-leaf::before,
+.divider-leaf::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a455);
+}
+
+.divider-leaf::before {
+  left: -55px;
+}
+
+.divider-leaf::after {
+  right: -55px;
+  background: linear-gradient(90deg, #c9a455, transparent);
+}
+
+.font-numeral {
+  font-variant-numeric: tabular-nums;
+}
